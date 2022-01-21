@@ -6,9 +6,11 @@
 //
 
 import UIKit
+import UserNotifications
 
 class AlertListViewController: UITableViewController {
     var alerts: [Alert] = []
+    let userNotificationCenter = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,8 +37,8 @@ class AlertListViewController: UITableViewController {
             alertList.sort(by: {$0.date.compare($1.date) == .orderedAscending})
             self.alerts = alertList
             UserDefaults.standard.setValue(try? PropertyListEncoder().encode(self.alerts), forKey: "alerts")
+            self.userNotificationCenter.addNotificationRequest(by: newAlert)
             self.tableView.reloadData()
-            
         }
         
         self.present(addAlertVC, animated: true, completion: nil)
@@ -85,6 +87,10 @@ extension AlertListViewController {
         case .delete:
             self.alerts.remove(at: indexPath.row)  // sorted 기준인 시간을 수정할 일은 없기 때문에 단순히 indexpath.row 로 특정하여 삭제해도 좋다
             UserDefaults.standard.setValue(try? PropertyListEncoder().encode(self.alerts), forKey: "alerts")
+            
+            // user notification center 에서 해당 알람 remove
+            userNotificationCenter.removePendingNotificationRequests(withIdentifiers: [self.alerts[indexPath.row].id])
+            
             self.tableView.reloadData()
             return
         default:
