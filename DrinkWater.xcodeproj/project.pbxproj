@@ -24,6 +24,7 @@
 		9268FF33279A6A78004E2FF2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9268FF36279A6A78004E2FF2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9268FF38279A6A78004E2FF2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9268FF3E279A6AA7004E2FF2 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,6 +41,7 @@
 		9268FF1E279A6A73004E2FF2 = {
 			isa = PBXGroup;
 			children = (
+				9268FF3E279A6AA7004E2FF2 /* README.md */,
 				9268FF29279A6A74004E2FF2 /* DrinkWater */,
 				9268FF28279A6A74004E2FF2 /* Products */,
 			);
