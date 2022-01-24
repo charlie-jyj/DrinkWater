@@ -148,7 +148,7 @@ Get the value in the presentedViewController property before calling this method
 
 
 - UserDefaults 는 custom 한 구조체를 이해하지 못한다 (제한적인 타입만 이해함)
-    - ProperyListDecoder() 사용
+    - PropertyListDecoder() 사용
         - JSONDecoder 와 유사하게 동작한다.
     - basic 예제에서는 casting을 [[String:Any]] 한 후에 data.compactMap 을 사용해서 decode 
         - type이 Dictionary를 담은 Array 형태이기 때문에 가능했던 듯 
